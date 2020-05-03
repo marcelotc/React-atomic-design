@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import registerServiceWorker from './registerServiceWorker';
 
-import MainTemplate from './templates/main/'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import { route } from './pages'
+import { MainTemplate } from './templates/main'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <MainTemplate></MainTemplate>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <Router>
+    <MainTemplate> { route } </MainTemplate>
+  </Router>
+, document.getElementById('root'));
+
+registerServiceWorker();
 

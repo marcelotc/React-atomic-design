@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react'
 
-function MainTemplate() {
+import { Header } from '../../organinsms/header'
+
+export class MainTemplate extends Component {
+  render() {
     return (
-        <div>
-            asdasd
-        </div>
-    );
+      <div>
+        <Header />
+        <main className="container mt-5">
+          { this.props.children }
+        </main>
+      </div>
+    )
+  }
 }
-
-export default MainTemplate;
